@@ -1,0 +1,20 @@
+inherit mono
+
+DESCRIPTION=".NET object database"
+HOMEPAGE="http://www.db4o.com/"
+SRC_URI="http://www.db4o.com/downloads/${P}-mono.tar.gz"
+PATCH_URI="mirror://portage/dev-dotnet/${PN}/files/${P}-makefile.patch"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall RPM_DOC_DIR=.
+
+	dodir /usr/share/doc/${P}
+	cp -r ${S}/doc/{api,reference,tutorial} ${D}/usr/share/doc/${P}
+}
