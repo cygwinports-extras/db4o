@@ -15,6 +15,6 @@ src_install() {
 	cd ${B}
 	cyginstall RPM_DOC_DIR=.
 
-	dodir /usr/share/doc/${P}
-	cp -r ${S}/doc/{api,reference,tutorial} ${D}/usr/share/doc/${P}
+#	dodir /usr/share/doc/${P}
+#	cp -r ${S}/doc/{api,reference,tutorial} ${D}/usr/share/doc/${P}
 }
